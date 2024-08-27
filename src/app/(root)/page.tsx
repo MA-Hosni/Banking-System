@@ -3,11 +3,11 @@ import HeaderBox from '@/components/HeaderBox'
 import RightSidebar from '@/components/RightSidebar';
 import TotalBalenceBox from '@/components/TotalBalenceBox';
 // import { getAccount, getAccounts } from '@/lib/actions/bank.actions';
-// import { getLoggedInUser } from '@/lib/actions/user.actions';
+import { getLoggedInUser } from '@/lib/actions/user.actions';
 
 
-export default function Home() {
-  const loggedIn = { firstName: 'Mohamed Ali', lastName: 'Hosni', email: 'test123@gmail.com'}
+export default async function Home() {
+  const loggedIn = await getLoggedInUser();
 
 
   return (
@@ -17,7 +17,7 @@ export default function Home() {
           <HeaderBox
             type="greeting"
             title="Welcome"
-            user={loggedIn?.firstName || 'Guest'}
+            user={loggedIn?.name || 'Guest'}
             subtext="Access and manage your account and transactions efficiently."
           />
 
