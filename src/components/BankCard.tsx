@@ -1,7 +1,7 @@
 import { formatAmount } from '@/lib/utils'
 import Image from 'next/image'
 import Link from 'next/link'
-import Copy from '@/components/Copy'
+// import Copy from '@/components/Copy'
 
 const BankCard = ({ account, userName, showBalance = true }: CreditCardProps) => {
 
