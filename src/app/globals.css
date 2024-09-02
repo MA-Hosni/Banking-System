@@ -380,3 +380,26 @@
     @apply text-16 font-semibold text-black-2 max-xl:hidden;
   }
 }
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px; /* Set your desired width */
+  position: relative;
+}
+
+.truncate:hover::after {
+  content: attr(data-full-email); /* Use data attribute to display the full email */
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  z-index: 10;
+  max-width: none;
+  overflow: visible;
+}
